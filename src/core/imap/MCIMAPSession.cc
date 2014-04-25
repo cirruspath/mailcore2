@@ -619,6 +619,11 @@ void IMAPSession::connect(ErrorCode * pError)
     
     MCAssert(mState == STATE_DISCONNECTED);
     
+    if(mHostname == NULL) {
+        * pError = ErrorConnection;
+        goto close;
+    }
+    
     switch (mConnectionType) {
         case ConnectionTypeStartTLS:
         MCLog("STARTTLS connect");
