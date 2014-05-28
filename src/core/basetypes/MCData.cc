@@ -289,13 +289,16 @@ String * Data::stringWithDetectedCharset(String * hintCharset, bool isHTML)
 
     result = stringWithCharset(charset->UTF8Characters());
     if (result == NULL) {
+        result = stringWithCharset("utf-8");
+    }
+    if (result == NULL) {
+        result = stringWithCharset("koi8-r");
+    }
+    if (result == NULL) {
         result = stringWithCharset("iso-8859-1");
     }
     if (result == NULL) {
         result = stringWithCharset("windows-1252");
-    }
-    if (result == NULL) {
-        result = stringWithCharset("utf-8");
     }
     if (result == NULL) {
         result = MCSTR("");
