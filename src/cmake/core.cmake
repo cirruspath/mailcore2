@@ -14,6 +14,8 @@ IF(APPLE)
     core/basetypes/MCAutoreleasePoolMac.mm
     core/basetypes/MCMainThread.mm
     core/basetypes/MCObjectMac.mm
+    core/basetypes/MCDataMac.mm
+    core/rfc822/MCMessageParserMac.mm
   )
 ENDIF()
 
@@ -41,6 +43,7 @@ set(basetypes_files
   core/basetypes/MCSet.cc
   core/basetypes/MCString.cc
   core/basetypes/MCValue.cc
+  core/basetypes/ConvertUTF.c
   ${basetypes_files_apple}
 )
 

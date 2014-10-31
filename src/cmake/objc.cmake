@@ -16,6 +16,7 @@ set(objc_imap_files
   objc/imap/MCOIMAPCapabilityOperation.mm
   objc/imap/MCOIMAPCopyMessagesOperation.mm
   objc/imap/MCOIMAPFetchContentOperation.mm
+  objc/imap/MCOIMAPFetchParsedContentOperation.mm
   objc/imap/MCOIMAPFetchFoldersOperation.mm
   objc/imap/MCOIMAPFetchMessagesOperation.mm
   objc/imap/MCOIMAPFetchNamespaceOperation.mm
@@ -69,6 +70,7 @@ set(objc_rfc822_files
 
 set(objc_smtp_files
   objc/smtp/MCOSMTPOperation.mm
+  objc/smtp/MCOSMTPLoginOperation.mm
   objc/smtp/MCOSMTPSendOperation.mm
   objc/smtp/MCOSMTPNoopOperation.mm
   objc/smtp/MCOSMTPSession.mm
@@ -77,12 +79,14 @@ set(objc_smtp_files
 set(objc_nntp_files
   objc/nntp/MCONNTPDisconnectOperation.mm
   objc/nntp/MCONNTPFetchArticleOperation.mm
-  objc/nntp/MCONNTPFetchArticlesOperation.mm
+  objc/nntp/MCONNTPFetchAllArticlesOperation.mm
   objc/nntp/MCONNTPFetchHeaderOperation.mm
   objc/nntp/MCONNTPGroupInfo.mm
   objc/nntp/MCONNTPListNewsgroupsOperation.mm
+  objc/nntp/MCONNTPFetchOverviewOperation.mm
+  objc/nntp/MCONNTPFetchServerTimeOperation.mm
   objc/nntp/MCONNTPOperation.mm
-  objc/nntp/MCONNTPSession.mm	
+  objc/nntp/MCONNTPSession.mm
 )
 
 set(objc_utils_files

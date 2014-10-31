@@ -337,12 +337,13 @@ void MessageHeader::removeExtraHeader(String * name)
 
 String * MessageHeader::extraHeaderValueForName(String * name)
 {
+    String * result = NULL;
     mc_foreachhashmapKey(String, key, mExtraHeaders) {
         if (key->isEqualCaseInsensitive(name)) {
-            return (String *) mExtraHeaders->objectForKey(key);
+            result = (String *) mExtraHeaders->objectForKey(key);
         }
     }
-    return NULL;
+    return result;
 }
 
 String * MessageHeader::extractedSubject()
@@ -515,7 +516,7 @@ void MessageHeader::importIMFFields(struct mailimf_fields * fields)
             String * fieldValueStr;
             
             fieldValue = field->fld_data.fld_optional_field->fld_value;
-            fieldValueStr = String::stringWithUTF8Characters(fieldValue);
+            fieldValueStr = String::stringByDecodingMIMEHeaderValue(fieldValue);
             setExtraHeader(fieldNameStr, fieldValueStr);
         }
     }

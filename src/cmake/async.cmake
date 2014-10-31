@@ -13,6 +13,7 @@ set(async_imap_files
   async/imap/MCIMAPDisconnectOperation.cc
   async/imap/MCIMAPExpungeOperation.cc
   async/imap/MCIMAPFetchContentOperation.cc
+  async/imap/MCIMAPFetchParsedContentOperation.cc
   async/imap/MCIMAPFetchFoldersOperation.cc
   async/imap/MCIMAPFetchMessagesOperation.cc
   async/imap/MCIMAPFetchNamespaceOperation.cc
@@ -48,6 +49,7 @@ set(async_smtp_files
   async/smtp/MCSMTPCheckAccountOperation.cc
   async/smtp/MCSMTPDisconnectOperation.cc
   async/smtp/MCSMTPOperation.cc
+  async/smtp/MCSMTPLoginOperation.cc
   async/smtp/MCSMTPSendWithDataOperation.cc
   async/smtp/MCSMTPNoopOperation.cc
 )
@@ -57,9 +59,11 @@ set(async_nntp_files
   async/nntp/MCNNTPCheckAccountOperation.cc
   async/nntp/MCNNTPDisconnectOperation.cc
   async/nntp/MCNNTPFetchArticleOperation.cc
-  async/nntp/MCNNTPFetchArticlesOperation.cc
+  async/nntp/MCNNTPFetchAllArticlesOperation.cc
   async/nntp/MCNNTPFetchHeaderOperation.cc
   async/nntp/MCNNTPListNewsgroupsOperation.cc
+  async/nntp/MCNNTPFetchOverviewOperation.cc
+  async/nntp/MCNNTPFetchServerTimeOperation.cc
   async/nntp/MCNNTPOperation.cc
 )
 
