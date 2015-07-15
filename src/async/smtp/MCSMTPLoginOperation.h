@@ -18,7 +18,7 @@
 
 namespace mailcore {
     
-    class SMTPLoginOperation : public SMTPOperation {
+    class MAILCORE_EXPORT SMTPLoginOperation : public SMTPOperation {
     public:
         SMTPLoginOperation();
         virtual ~SMTPLoginOperation();

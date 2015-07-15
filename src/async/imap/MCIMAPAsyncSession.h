@@ -41,7 +41,7 @@ namespace mailcore {
     class IMAPIdentity;
     class OperationQueueCallback;
     
-    class IMAPAsyncSession : public Object {
+    class MAILCORE_EXPORT IMAPAsyncSession : public Object {
     public:
         IMAPAsyncSession();
         virtual ~IMAPAsyncSession();
@@ -102,7 +102,7 @@ namespace mailcore {
         
         virtual IMAPIdentity * serverIdentity();
         virtual IMAPIdentity * clientIdentity();
-        virtual String * gmailUserDisplayName();
+        virtual String * gmailUserDisplayName() DEPRECATED_ATTRIBUTE;
         
         virtual IMAPFolderInfoOperation * folderInfoOperation(String * folder);
         virtual IMAPFolderStatusOperation * folderStatusOperation(String * folder);
@@ -127,8 +127,8 @@ namespace mailcore {
                                                                          IndexSet * indexes);
         virtual IMAPFetchMessagesOperation * fetchMessagesByNumberOperation(String * folder, IMAPMessagesRequestKind requestKind,
                                                                             IndexSet * indexes);
-        virtual IMAPFetchMessagesOperation * syncMessagesByUID(String * folder, IMAPMessagesRequestKind requestKind,
-                                                               IndexSet * indexes, uint64_t modSeq);
+        virtual IMAPFetchMessagesOperation * syncMessagesByUIDOperation(String * folder, IMAPMessagesRequestKind requestKind,
+                                                                        IndexSet * indexes, uint64_t modSeq);
         
         virtual IMAPFetchContentOperation * fetchMessageByUIDOperation(String * folder, uint32_t uid, bool urgent = false);
         virtual IMAPFetchContentOperation * fetchMessageAttachmentByUIDOperation(String * folder, uint32_t uid, String * partID,

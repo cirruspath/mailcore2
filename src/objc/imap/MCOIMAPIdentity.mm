@@ -23,6 +23,15 @@
     MCORegisterClass(self, &typeid(nativeType));
 }
 
+- (id) init
+{
+    mailcore::IMAPIdentity * identity = new mailcore::IMAPIdentity();
+    self = [self initWithMCIdentity:identity];
+    identity->release();
+
+    return self;
+}
+
 - (id) initWithMCIdentity:(mailcore::IMAPIdentity *)identity
 {
     self = [super init];
@@ -80,6 +89,11 @@ MCO_OBJC_SYNTHESIZE_STRING(setVersion, version)
 - (void) setInfo:(NSString *)value forKey:(NSString *)key
 {
     MCO_NATIVE_INSTANCE->setInfoForKey([key mco_mcString], [value mco_mcString]);
+}
+
+- (void) removeAllInfos
+{
+    MCO_NATIVE_INSTANCE->removeAllInfos();
 }
 
 + (MCOIMAPIdentity *) identityWithVendor:(NSString *)vendor

@@ -11,14 +11,19 @@
 #define MAILCORE_HTMLCLEANER_H
 
 #include <MailCore/MCString.h>
+#include <MailCore/MCUtils.h>
+
+#ifdef __cplusplus
 
 namespace mailcore {
     
-    class HTMLCleaner {
+    class MAILCORE_EXPORT HTMLCleaner {
     public:
         static String * cleanHTML(String * input);
     };
     
 }
+
+#endif
 
 #endif
